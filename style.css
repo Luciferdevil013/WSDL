@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --desktop-font-size: 1.5vw;
+}
+
 html,
 body {
     height: 100%;
@@ -28,6 +32,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999999999;
 }
 
 .logo {
@@ -522,4 +527,19 @@ nav {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+}
+
+.submit{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    outline: none;
+    padding: 2.5vh 4vw;
+    border-radius: 0.75rem;
+    background: #1392F9;
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
 }
