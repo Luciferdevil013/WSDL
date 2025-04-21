@@ -1,0 +1,310 @@
+.freeValutaion {
+    gap: 1rem;
+    position: relative;
+}
+
+.freeBack {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.freValuation-header {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url('../Assets/Images/Step-1.webp') lightgray 50% / cover no-repeat;
+    align-items: flex-start !important;
+    padding: 0 3vw;
+    gap: 1rem;
+}
+
+.freeBack svg {
+    width: 100%;
+    height: 100%;
+}
+
+.freeValutaion .h1-heading {
+    color: #fff;
+    font-size: calc(var(--desktop-font-size) * 2.3);
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.freeValutaion .h1-heading span {
+    color: #80D741;
+    font-weight: 700;
+}
+
+
+.freeValutaion form {
+    position: relative;
+    padding: 10vh 6vw;
+    gap: 3rem;
+    z-index: 999;
+}
+
+.freeValutaionBackTextutre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: url('../Assets/freeValuation-Back.png') lightgray 0% 0% / 145.9999918937683px 145.9999918937683px repeat;
+    filter: blur(100px);
+    z-index: -1;
+}
+
+
+.form-container {
+    width: 100%;
+    height: fit-content;
+    gap: 5rem;
+    position: relative;
+}
+
+.mandatory {
+    position: absolute;
+    top: -20%;
+    left: 0;
+}
+
+.companyType {
+    gap: 1rem;
+}
+
+.companyType-container {
+    gap: 1rem;
+}
+
+.companyTypeButton {
+    width: fit-content;
+    padding: 1.5vh 2.1vw;
+    border-radius: 0.5rem;
+    border: 0.5px solid #4F4F4F;
+    color: #4F4F4F;
+    cursor: pointer;
+    font-weight: 400;
+    background: #fff;
+}
+
+.companyMini {
+    width: 70%;
+    gap: 1rem;
+}
+
+#otherSpecfic {
+    width: 45%;
+}
+
+
+.active {
+    border: none;
+    background: #78C93D;
+    color: #fff;
+}
+
+.freeValutaion label {
+    color: #4F4F4F;
+    font-size: calc(var(--desktop-font-size) * 1.13);
+    font-weight: 500;
+    line-height: 120%;
+    word-spacing: 0.1cap;
+}
+
+.companyName input {
+    width: 100%;
+}
+
+.halfInputContainer {
+    width: 50%;
+    gap: 1rem;
+    position: relative;
+}
+
+.astra {
+    width: 0.75rem;
+}
+
+.fullInputContainer {
+    width: 100%;
+    gap: 1rem;
+}
+
+form input,
+form button {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #C5C5C5;
+    width: 100%;
+    font-size: calc(var(--desktop-font-size) * 0.78);
+    font-weight: 500;
+    background: transparent;
+    color: #D1D1D1;
+    padding: 1vh 1vw;
+}
+
+form input ::placeholder {
+    color: #D1D1D1;
+}
+
+
+.SubmitDiv {
+    position: sticky;
+    bottom: 0;
+    text-align: right;
+    background: #FFF;
+    box-shadow: 0px -2px 20px 0px rgba(0, 0, 0, 0.10);
+    width: 100%;
+    padding: 4vh 2vw;
+    z-index: 99;
+}
+
+.SubmitDiv .submit {
+    background: #78C93D;
+    font-size: calc(var(--desktop-font-size) * 1);
+}
+
+.custom-select,
+.city-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    color: #4F4F4F;
+}
+
+.select-button {
+    width: 100%;
+    padding: 1vh 1vw;
+    /* background: #fff; */
+    cursor: pointer;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #C5C5C5;
+    color: #4F4F4F;
+    text-align: left;
+    font-size: calc(var(--desktop-font-size) * 0.78);
+    font-weight: 500;
+}
+
+.select-button::after {
+    content: "";
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.25 7.5L10 13.75L3.75 7.5" stroke="%2378C93D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.options-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 40vh;
+    overflow-y: auto;
+    border: none;
+    margin-top: 0.5rem;
+    display: none;
+    z-index: 1000;
+    border-radius: 0.75rem;
+    background: #FFF;
+    box-shadow: 0px 70px 20px 0px rgba(0, 0, 0, 0.00), 0px 45px 18px 0px rgba(0, 0, 0, 0.01), 0px 25px 15px 0px rgba(0, 0, 0, 0.05), 0px 11px 11px 0px rgba(0, 0, 0, 0.09), 0px 3px 6px 0px rgba(0, 0, 0, 0.10);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3vh 1vw;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.options-list li {
+    padding: 3vh 0;
+    cursor: pointer;
+    list-style: none;
+    color: #262626;
+    font-size: calc(var(--desktop-font-size) * 0.78);
+    font-weight: 500;
+    border-bottom: 0.5px solid #C5C5C5;
+}
+
+.options-list li:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.options-list li:hover {
+    color: #78C93D;
+    font-size: calc(var(--desktop-font-size) * 0.78);
+    font-weight: 700;
+}
+
+.options-list li[data-value="none"] {
+    color: #999;
+}
+
+.options-list li.selected::after {
+    content: "✓";
+    color: #78C93D;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.costPriceDiv {
+    align-items: center;
+}
+
+
+.wholesale-currency,
+.asking-currency {
+    width: fit-content !important;
+}
+
+.wholesale-currency .select-button,
+.asking-currency .select-button {
+    width: fit-content !important;
+    padding-right: 2vw;
+    text-align: left !important;
+}
+
+#otherSpecfic {
+    display: none;
+}
+
+
+@media (max-width: 480px) {
+    .halfInputContainer {
+        width: 100%;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .companyMini {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+    }
+
+    #otherSpecfic {
+        width: 100%;
+    }
+
+    .companyTypeButton {
+        flex-shrink: 0;
+    }
+
+    .companyType-container {
+        flex-wrap: wrap;
+    }
+
+    .wholesale-currency .select-button,
+    .asking-currency .select-button {
+        padding-right: 8vw;
+    }
+}
