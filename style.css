@@ -239,7 +239,8 @@ nav {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    /* gap: 1rem; */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .slide .slide-img {
@@ -247,6 +248,8 @@ nav {
     height: 220px;
     object-fit: cover;
     object-position: center;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .slide .slide-details {
