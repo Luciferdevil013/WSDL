@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
     <title>We Sell Dead Lots</title>
 </head>
 
@@ -38,136 +39,445 @@
         </nav>
     </header>
     <main>
-        <section class="videoPlayer">
-            <div class="video">
-                <video autoplay muted loop src="./porshe.mp4"></video>
+        <section class="contact-form flex">
+            <div class="class-left flex flex-column">
+                <div class="contact-left-text-container flex flex-column">
+                    <h1 class="h1-heading contact-heading">Let's get<br> in touch</h1>
+                    <p class="paragraph">Great! We're excited to hear from you and let's start something special together. contact us for inquiry</p>
+                </div>
+
+                <div class="contact-map-container">
+                    <iframe class="contactMap"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.0462991398695!2d55.402408575385195!3d25.302648477643235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ffa941f54e9%3A0x2a2384d9bf6808db!2sWe%20Buy%20Dead%20Stocks!5e0!3m2!1sen!2sin!4v1740681092375!5m2!1sen!2sin"
+                        width="600" height="450" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
             </div>
 
-            <div class="videoTextHeader">
-                <h1 class="h1-heading">We Sell Dead Lots</h1>
-                <div class="video-sub">
-                    <p class="paragraph first">We specialize in giving unsold inventory a second life.</p>
-                    <p class="paragraph second">UNBEATABLE PRICING</p>
-                    <div class="liness"></div>
-                    <a href="./category.html" class="links">Explore All Lots</a>
+            <div class="contactRight flex flex-column flex-center">
+                <form action="#">
+                    <h4 class="form-line">Say Hello!</h4>
+                    <div class="form-container flex flex-column">
+                        <div class="form-input flex">
+
+                            <input class="contactInput" type="text" name="name" placeholder="[Your name/company name]">
+
+                            <input class="contactInput" type="email" name="email" placeholder="[Email]">
+
+
+                            <input class="contactInput" type="text" name="phone" placeholder="[Phone]">
+
+                            <input class="contactInput" type="text" name="subject" placeholder="[Subject]">
+
+
+                        </div>
+
+                        <button class="submit">Submit</button>
+                    </div>
+                </form>
+
+                <div class="other-option flex flex-column">
+                    <h4 class="h4-heading">Reach out to us at</h4>
+
+                    <div class="option-container flex flex-column">
+                        <div class="social-media">
+                            <a href="https://www.instagram.com/webuydeadstocks?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                target="_blank">
+                                <svg class="social-media-icon" role="img" aria-label="Instagram"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" fill="none"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g clip-path="url(#clip0_895_1283)">
+                                        <path
+                                            d="M18.3334 24.0618C21.4975 24.0618 24.0625 21.4968 24.0625 18.3327C24.0625 15.1686 21.4975 12.6035 18.3334 12.6035C15.1692 12.6035 12.6042 15.1686 12.6042 18.3327C12.6042 21.4968 15.1692 24.0618 18.3334 24.0618Z"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-miterlimit="10" />
+                                        <path
+                                            d="M25.2083 4.58398H11.4583C7.66136 4.58398 4.58331 7.66203 4.58331 11.459V25.209C4.58331 29.0059 7.66136 32.084 11.4583 32.084H25.2083C29.0053 32.084 32.0833 29.0059 32.0833 25.209V11.459C32.0833 7.66203 29.0053 4.58398 25.2083 4.58398Z"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M25.7812 12.6035C26.7305 12.6035 27.5 11.834 27.5 10.8848C27.5 9.93553 26.7305 9.16602 25.7812 9.16602C24.832 9.16602 24.0625 9.93553 24.0625 10.8848C24.0625 11.834 24.832 12.6035 25.7812 12.6035Z"
+                                            fill="#80D741" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_895_1283">
+                                            <rect width="36.6667" height="36.6667" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/chaudary-anwar-tr.-co-llc/posts/?feedView=all"
+                                target="_blank">
+                                <svg class="social-media-icon" role="img" aria-label="Linkdin"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 37" fill="none"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g clip-path="url(#clip0_895_1288)">
+                                        <path
+                                            d="M31.6042 4.58398H6.39583C5.76301 4.58398 5.25 5.09699 5.25 5.72982V30.9382C5.25 31.571 5.76301 32.084 6.39583 32.084H31.6042C32.237 32.084 32.75 31.571 32.75 30.9382V5.72982C32.75 5.09699 32.237 4.58398 31.6042 4.58398Z"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M17.8542 16.041V25.2077" stroke="#80D741" stroke-width="1.52778"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M13.2709 16.041V25.2077" stroke="#80D741" stroke-width="1.52778"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M17.8542 20.0514C17.8542 18.9878 18.2767 17.9677 19.0288 17.2156C19.7809 16.4635 20.801 16.041 21.8646 16.041C22.9282 16.041 23.9483 16.4635 24.7004 17.2156C25.4525 17.9677 25.875 18.9878 25.875 20.0514V25.2077"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M13.2709 13.75C14.2201 13.75 14.9896 12.9805 14.9896 12.0312C14.9896 11.082 14.2201 10.3125 13.2709 10.3125C12.3216 10.3125 11.5521 11.082 11.5521 12.0312C11.5521 12.9805 12.3216 13.75 13.2709 13.75Z"
+                                            fill="#80D741" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_895_1288">
+                                            <rect width="36.6667" height="36.6667" fill="white"
+                                                transform="translate(0.666687)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+
+                            <a href="https://www.facebook.com/webuydeadstocks/" target="_blank">
+                                <svg class="social-media-icon" role="img" aria-label="Facebook"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" fill="none"
+                                    preserveAspectRatio="xMidYMid meet">
+                                    <g clip-path="url(#clip0_895_1295)">
+                                        <path
+                                            d="M18.6667 32.084C26.2606 32.084 32.4167 25.9279 32.4167 18.334C32.4167 10.7401 26.2606 4.58398 18.6667 4.58398C11.0728 4.58398 4.91669 10.7401 4.91669 18.334C4.91669 25.9279 11.0728 32.084 18.6667 32.084Z"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M24.3959 12.6035H22.1042C21.1925 12.6035 20.3182 12.9657 19.6735 13.6103C19.0289 14.255 18.6667 15.1293 18.6667 16.041V32.0827"
+                                            stroke="#80D741" stroke-width="1.52778" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M14.0834 20.625H23.25" stroke="#80D741" stroke-width="1.52778"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_895_1295">
+                                            <rect width="36.6667" height="36.6667" fill="white"
+                                                transform="translate(0.333374)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+
+
+                            <a href="https://www.tiktok.com/@webuydeadstocks.com?is_from_webapp=1&sender_device=pc"
+                                target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 33 33"
+                                    preserveAspectRatio="xMidYMid meet" class="social-media-icon" role="img"
+                                    aria-label="TikTok">
+                                    <g clip-path="url(#a)">
+                                        <path stroke="#80D741" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1"
+                                            d="M21.4746 12.7793C23.5133 14.2467 25.9627 15.034 28.4746 15.0293V10.0293C26.6181 10.0293 24.8376 9.2918 23.5249 7.97904C22.2121 6.66629 21.4746 4.88581 21.4746 3.0293H16.4746V19.5293C16.4743 20.1556 16.306 20.7703 15.9872 21.3094C15.6684 21.8485 15.2108 22.2922 14.6621 22.5941C14.1135 22.8961 13.4938 23.0453 12.8678 23.0262C12.2418 23.0071 11.6324 22.8203 11.1032 22.4855C10.5739 22.1506 10.1442 21.6798 9.85891 21.1223C9.57359 20.5648 9.4431 19.9409 9.48104 19.3158C9.51898 18.6906 9.72397 18.0871 10.0746 17.5682C10.4253 17.0493 10.9088 16.634 11.4746 16.3655V11.0293C7.49586 11.738 4.47461 15.3468 4.47461 19.5293C4.47461 21.7836 5.37014 23.9456 6.9642 25.5397C8.55826 27.1338 10.7203 28.0293 12.9746 28.0293C15.2289 28.0293 17.391 27.1338 18.985 25.5397C20.5791 23.9456 21.4746 21.7836 21.4746 19.5293V12.7793Z"
+                                            class="colorStroke000 svgStroke"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="32" height="32" fill="#ffffff" transform="translate(.475 .03)"
+                                                class="colorfff svgShape"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <button class="calendy">Schedule a call on Calendely</button>
+                    </div>
                 </div>
             </div>
+
+
         </section>
 
-        <section class="tag-line">
-            <h4 class="h4-heading">
-                we specialize in giving unsold inventory a second life. Whether you have overstocked, slow-moving, or discontinued products, we help you liquidate them efficiently—without compromising your brand integrity.
-            </h4>
+        <section class="Faqs flex flex-column">
+            <h2 class="h2-heading">FAQs</h2>
 
-            <div class="h2-Text">
-                <h2 class="h2-heading unbeat">Unbeatable prices</h2>
-                <h2 class="h2-heading quality">On Quality Surplus</h2>
-                <h2 class="h2-heading invent">Inventory</h2>
-            </div>
+            <div class="allquestion flex flex-column">
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            What are dead stocks?
+                        </h3>
 
-            <div class="explore-button">
-                <a href="./category.html">Explore Collection</a>
-            </div>
-        </section>
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
 
-        <section class="today-deal today">
-            <h3 class="h3-heading">Today's Deal</h3>
-
-            <div class="slider">
-            </div>
-        </section>
-
-        <section class="categories">
-            <h3 class="h3-heading">Categories</h3>
-            <div class="categories-show">
-                <div class="categories-list">
-                    <button class="categories-button active">Electrical & Automation</button>
-                    <button class="categories-button">Tools & Equipments</button>
-                    <button class="categories-button">Industrial Equipments & Components</button>
-                    <button class="categories-button">Construction & Building Solution</button>
-                    <button class="categories-button">Technology & Power Solution</button>
-                    <button class="categories-button">Energy Marine & Aerospace</button>
-                    <button class="categories-button">Consumers Goods & Lifestyle</button>
-                    <button class="categories-button">Scrap</button>
-                </div>
-                <div class="categories-card">
-                    
-                    <div class="category">
-                        <img class="category-img" src="https://738eda.myshopify.com/cdn/shop/files/Electrical.webp?v=1744326661&width=990" alt="Categories">
-
-                        <div class="category-links-button">
-                            <a href="#" class="category-button">Switch Gear <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></a>
-                        </div>
                     </div>
-
-
-                    <div class="category">
-                        <img class="category-img" src="https://738eda.myshopify.com/cdn/shop/files/Electrical.webp?v=1744326661&width=990" alt="Categories">
-
-                        <div class="category-links-button">
-                            <a href="#" class="category-button">Switch Gear <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></a>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <img class="category-img" src="https://738eda.myshopify.com/cdn/shop/files/Electrical.webp?v=1744326661&width=990" alt="Categories">
-
-                        <div class="category-links-button">
-                            <a href="#" class="category-button">Switch Gear <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></a>
-                        </div>
-                    </div>
-
-                    <div class="category">
-                        <img class="category-img" src="https://738eda.myshopify.com/cdn/shop/files/Electrical.webp?v=1744326661&width=990" alt="Categories">
-
-                        <div class="category-links-button">
-                            <a href="#" class="category-button">Switch Gear <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></a>
-                        </div>
-                    </div>
-
-
-                    <div class="category">
-                        <img class="category-img" src="https://738eda.myshopify.com/cdn/shop/files/Electrical.webp?v=1744326661&width=990" alt="Categories">
-
-                        <div class="category-links-button">
-                            <a href="#" class="category-button">Switch Gear <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round"/>
-                              </svg></a>
-                        </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We Buy Dead Stocks specializes in helping businesses liquidate surplus or obsolete inventory, offering fast, hassle-free transactions while ensuring brand protection and confidentiality.</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="today-deal explore-lots">
-            <h3 class="h3-heading">Explore All Lots</h3>
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            What types of inventory do you buy?
+                        </h3>
 
-            <div class="slider">
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We buy a variety of inventory including electrical goods, consumer products, IT equipment, construction materials, scrap, and more, from B2B clients only.</p>
+                    </div>
+                </div>
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            Who can sell inventory to you?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We exclusively buy from manufacturers, wholesalers, distributors, and startups in a B2B capacity.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            How do I get a price for my materials?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Submit your inventory via our evaluation form or schedule a call, and we will provide an offer based on the details you provide.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            How long is the price offer valid?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Our offer is valid for 3 weeks; after that, the price may change based on market conditions.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            What payment methods do you offer?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We pay upfront via cash or bank transfer; we do not offer credit payments.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            Where do you resell the dead stock?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We export most of the stock to developing countries, ensuring it doesn’t affect your local market.</p>
+                    </div>
+                </div>
+
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            How do I upload my inventory for sale?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">You can upload your inventory images and descriptions through our website’s file upload option.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            How quickly can you pick up my dead stock?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Once the offer is accepted, we arrange collection within a few days, ensuring fast and efficient logistics.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            Do you provide international shipping for the inventory you purchase?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Yes, we handle international shipments, ensuring smooth delivery to global destinations.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            Why should I choose We Buy Dead Stocks over freelancers?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">We are a licensed, professional company with over 20 years of experience, offering structured processes, security, and tailored solutions.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            How does selling dead stock help my business?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Selling dead stock frees up space, reduces storage costs, and provides immediate cash without harming your brand.</p>
+                    </div>
+                </div>
+
+                <div class="question-Container flex flex-column">
+                    <div class="question flex">
+                        <h3 class="h3-heading questionTitle">
+                            Can you help with sustainable disposal of inventory?
+                        </h3>
+
+                        <svg class="plusSign" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" role="img" aria-labelledby="plusTitle plusDesc">
+                            <title id="plusTitle">Expand FAQ Section</title>
+                            <desc id="plusDesc">Click to expand frequently asked questions about dead stock liquidation</desc>
+                            <g id="plus-icon">
+                                <path d="M8.75 28H47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                                <path id="vertical-line" d="M28 8.75V47.25" stroke="#262626" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <div class="answer">
+                        <p class="paragraph answerPara">Yes, we help repurpose unsold inventory by exporting it to markets where it can be used, contributing to sustainability.</p>
+                    </div>
+                </div>
+                
             </div>
 
-            <div class="explore-button-all">
-                <a href="./category.html" class="links">View All</a>
-            </div>
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <script src="index.js"></script>
+    <script src="contact.js"></script>
 </body>
 
 </html>
