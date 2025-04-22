@@ -300,6 +300,7 @@ nav {
 .slide-price {
     font-size: calc(var(--desktop-font-size) * 0.6);
     font-weight: 400;
+    color: #8a8a8a;
 }
 
 .cart-button {
