@@ -130,27 +130,29 @@ async function fetchTodaysDeals() {
     try {
         const query = `
             query {
-                products(first: 50) {
-                    edges {
-                        node {
-                            id
-                            title
-                            vendor
-                            description
-                            images(first: 1) {
-                                edges {
-                                    node {
-                                        url
-                                        altText
+                collectionByHandle(handle: "today-deal") {
+                    products(first: 50) {
+                        edges {
+                            node {
+                                id
+                                title
+                                vendor
+                                description
+                                images(first: 1) {
+                                    edges {
+                                        node {
+                                            url
+                                            altText
+                                        }
                                     }
                                 }
-                            }
-                            variants(first: 1) {
-                                edges {
-                                    node {
-                                        price {
-                                            amount
-                                            currencyCode
+                                variants(first: 1) {
+                                    edges {
+                                        node {
+                                            price {
+                                                amount
+                                                currencyCode
+                                            }
                                         }
                                     }
                                 }
@@ -176,7 +178,7 @@ async function fetchTodaysDeals() {
         }
 
         const data = await response.json();
-        return data.data.products.edges;
+        return data.data.collectionByHandle.products.edges;
     } catch (error) {
         console.error('Error fetching today\'s deals:', error);
         return [];

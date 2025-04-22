@@ -288,6 +288,7 @@ nav {
 
 .glider-track{
     gap: 2rem !important;
+    padding: 0 1vw !important;
 }
 
 .explore-lots .slider{
