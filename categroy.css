@@ -147,3 +147,28 @@ main{
     height: 100%;
     width: 100%;
 }
+
+@media (max-width: 480px) {
+    .category-section{
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 10vh;
+    }
+
+    .category-filter{
+        width: 100%;
+    }
+
+    .category-product{
+        width: 100%;
+        padding: 0 2vw;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .category-product .slide{
+        width: 80%;
+        height: 50vh;
+    }
+}
