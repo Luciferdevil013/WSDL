@@ -1,38 +1,38 @@
 gsap.registerPlugin(ScrollTrigger);
-function splitText(element){
+function splitText(element) {
     const elementSelector = document.querySelector(element);
-    const elementSplit = new SplitType(elementSelector,{types: 'lines, words'});
+    const elementSplit = new SplitType(elementSelector, { types: 'lines, words' });
     return elementSplit.words;
 }
 
 
-function videoPlayerAnimation(){
+function videoPlayerAnimation() {
     const liness = document.querySelector('.videoTextHeader .video-sub .liness');
     const link = document.querySelector('.videoTextHeader .video-sub .links');
 
     const herotl = gsap.timeline({});
-    herotl.from(splitText('.videoTextHeader .h1-heading'),{
-        y:100,
+    herotl.from(splitText('.videoTextHeader .h1-heading'), {
+        y: 100,
         duration: 1,
-    },'first')
-    .from(splitText('.videoTextHeader .video-sub .first'), {
-        y:100,
-        duration: 1,
-    },'first')
-    .from(splitText('.videoTextHeader .video-sub .second'), {
-        y:100,
-        duration: 1,
-    },'first')
-    .from(liness, {
-        scaleX: 0,
-        duration: 1,
-        transformOrigin: 'left',
     }, 'first')
-    .from(link, {
-        y:100,
-        opacity:0,
-        duration: 1,
-    },'first')
+        .from(splitText('.videoTextHeader .video-sub .first'), {
+            y: 100,
+            duration: 1,
+        }, 'first')
+        .from(splitText('.videoTextHeader .video-sub .second'), {
+            y: 100,
+            duration: 1,
+        }, 'first')
+        .from(liness, {
+            scaleX: 0,
+            duration: 1,
+            transformOrigin: 'left',
+        }, 'first')
+        .from(link, {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+        }, 'first')
 }
 
 videoPlayerAnimation();
@@ -244,7 +244,7 @@ async function fetchExploreLots() {
 // Function to display today's deals
 function displayTodaysDeals(products) {
     const slider = document.querySelector('.today .slider');
-    
+
     if (!slider) {
         console.error('Today\'s deals slider not found');
         return;
@@ -278,7 +278,7 @@ function displayTodaysDeals(products) {
 // Function to display explore lots
 function displayExploreLots(products) {
     const slider = document.querySelector('.explore-lots .slider');
-    
+
     if (!slider) {
         console.error('Explore lots slider not found');
         return;
@@ -309,16 +309,63 @@ function displayExploreLots(products) {
     });
 }
 
+
+
+const interestContainer = document.querySelector('.category-show')
+
+const allButton = document.querySelectorAll('.categories-button')
+
+let allStocks = {}
+
+async function fetchStocks() {
+    allStocks = await fetch('/JS/Stocks.json').then(res => res.json());
+
+    getStockData('Electronic');
+}
+
+allButton.forEach(button => {
+    button.addEventListener('click', (buttonInstance) => {
+        allButton.forEach(btn => btn.classList.remove('active'));
+        buttonInstance.target.classList.add('active')
+        getStockData(buttonInstance.target.dataset.stock)
+
+    })
+});
+
+
+function getStockData(stockName) {
+    let stocksdata = allStocks[stockName]
+    showStocks(stocksdata)
+}
+
+
+function showStocks(Stocks) {
+    interestContainer.innerHTML = Stocks.map(stock => `
+            <div class="category">
+                <img class="category-img" src="${stock.img}" alt="Electrical Image">
+                <div class="category-links-button">
+                    <a href="#" class="category-button">${stock.text}<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <path d="M7 21L21 7" stroke="#262626" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9.625 7L21 7L21 18.375" stroke="#262626" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                </div>
+            </div>`).join('');
+}
+
+
+
 // Initialize the page
 async function initializePage() {
     // Fetch and display today's deals
     const todaysDeals = await fetchTodaysDeals();
     displayTodaysDeals(todaysDeals);
-
+    
     // Fetch and display explore lots
     const exploreLots = await fetchExploreLots();
     displayExploreLots(exploreLots);
+    fetchStocks();
 }
 
 // Call initializePage when the DOM is loaded
 document.addEventListener('DOMContentLoaded', initializePage);
+
+

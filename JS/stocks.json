@@ -1,0 +1,167 @@
+{
+    "Electronic" : [
+        {
+            "img":"/Assets/Interest/Electrical.webp",
+            "text":"Switch Gear"
+        },
+        {
+            "img":"/Assets/Interest/Electronic-2.webp",
+            "text":"Automation & control equipments"
+        },
+        {
+            "img":"/Assets/Interest/Electronic-3.webp",
+            "text":"Wires & Cables"
+        },
+        {
+            "img":"/Assets/Interest/Electronic-4.webp",
+            "text":"Switch & Sockets"
+        },
+        {
+            "img":"/Assets/Interest/Electronic-5.webp",
+            "text":"Electronics & Lighting"
+        }
+    ],
+
+    "Tools" : [
+        {
+            "img":"/Assets/Interest/Tools-1.webp",
+            "text":"Hand Tools"
+        },
+        {
+            "img":"/Assets/Interest/Tools-2.webp",
+            "text":"Power Tools"
+        },
+        {
+            "img":"/Assets/Interest/Tools-3.webp",
+            "text":"Cutting Tools"
+        },
+        {
+            "img":"/Assets/Interest/Tools-4.webp",
+            "text":"Measuring Tools"
+        },
+        {
+            "img":"/Assets/Interest/Tools-5.webp",
+            "text":"Fastening Tools"
+        }
+    ],
+    "Industrial" : [
+        {
+            "img":"/Assets/Interest/Industrial-1.webp",
+            "text":"Machinery"
+        },
+        {
+            "img":"/Assets/Interest/Industrial-2.webp",
+            "text":"Bearings"
+        },
+        {
+            "img":"/Assets/Interest/Industrial-3.webp",
+            "text":"Hydraulic Components"
+        },
+        {
+            "img":"/Assets/Interest/Industrial-4.webp",
+            "text":"Motors"
+        },
+        {
+            "img":"/Assets/Interest/Industrial-5.webp",
+            "text":"Generators"
+        }
+    ],
+    "Construction" : [
+        {
+            "img":"/Assets/Interest/Construction-1.webp",
+            "text":"HVAC Systems"
+        },
+        {
+            "img":"/Assets/Interest/Construction-2.webp",
+            "text":"Fire & Safety"
+        },
+        {
+            "img":"/Assets/Interest/Construction-3.webp",
+            "text":"Building Materials"
+        },
+        {
+            "img":"/Assets/Interest/Construction-4.webp",
+            "text":"Plumbing Systems"
+        },
+        {
+            "img":"/Assets/Interest/Construction-5.webp",
+            "text":"Construction Tools & Equipments"
+        }
+    ],
+    "Technology" : [
+        {
+            "img":"/Assets/Interest/Technology-1.webp",
+            "text":"IT Equipments"
+        },
+        {
+            "img":"/Assets/Interest/Technology-2.webp",
+            "text":"Batteries"
+        },
+        {
+            "img":"/Assets/Interest/Technology-3.webp",
+            "text":"Networking Devices"
+        },
+        {
+            "img":"/Assets/Interest/Technology-4.webp",
+            "text":"Data Storage"
+        }
+    ],
+    "Energy" : [
+        {
+            "img":"/Assets/Interest/Energy-1.webp",
+            "text":"Oil & Gas Equipments"
+        },
+        {
+            "img":"/Assets/Interest/Energy-2.webp",
+            "text":"Marine Supplies"
+        },
+        {
+            "img":"/Assets/Interest/Energy-3.webp",
+            "text":"Aerospace & Aircraft Materials"
+        }
+    ],
+    "Consumer" : [
+        {
+            "img":"/Assets/Interest/Consumer-1.webp",
+            "text":"Garments"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-2.webp",
+            "text":"Cosmetics & Personal Care"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-3.webp",
+            "text":"Toys & Games"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-4.webp",
+            "text":"Kids Essentials"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-5.webp",
+            "text":"Footwear"
+        }
+    ],
+    "Scrap" : [
+        {
+            "img":"/Assets/Interest/Consumer-1.webp",
+            "text":"Garments"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-2.webp",
+            "text":"Cosmetics & Personal Care"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-3.webp",
+            "text":"Toys & Games"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-4.webp",
+            "text":"Kids Essentials"
+        },
+        {
+            "img":"/Assets/Interest/Consumer-5.webp",
+            "text":"Footwear"
+        }
+    ]
+}
