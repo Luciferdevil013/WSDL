@@ -288,7 +288,6 @@ nav {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    /* padding: 0 2vw; */
     gap: 0.5rem;
 }
 
@@ -316,7 +315,7 @@ nav {
     color: #262626;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: calc(var(--desktop-font-size) * 1.5);
+    font-size: calc(var(--desktop-font-size) * 2.2);
     font-weight: 300;
     overflow: hidden;
 }
