@@ -55,7 +55,7 @@ nav {
     text-decoration: none;
     color: #262626;
     font-family: "Montserrat";
-    font-size: 1rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
     font-weight: 400;
 }
 
@@ -102,7 +102,7 @@ nav {
 }
 
 .h1-heading {
-    font-size: 10rem;
+    font-size: calc(var(--desktop-font-size) * 7);
     color: #fff;
     text-align: center;
     font-family: "Montserrat";
@@ -121,7 +121,7 @@ nav {
 
 
 .paragraph {
-    font-size: 1rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
     color: #fff;
     text-align: center;
     font-family: "Montserrat";
@@ -161,7 +161,7 @@ nav {
     color: #262626;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: 1rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
     font-weight: 500;
     line-height: normal;
     overflow: hidden;
@@ -171,7 +171,7 @@ nav {
     color: #262626;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: 7rem;
+    font-size: calc(var(--desktop-font-size) * 5);
     font-weight: 300;
     overflow: hidden;
 }
@@ -208,7 +208,7 @@ nav {
     text-decoration: none;
     color: #262626;
     font-family: "Montserrat";
-    font-size: 1.5rem;
+    font-size: calc(var(--desktop-font-size) * 1.1);
 }
 
 .today-deal {
@@ -226,6 +226,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    overflow: hidden;
 }
 
 .product-link {
@@ -276,12 +277,12 @@ nav {
 }
 
 .slide-name {
-    font-size: 0.9rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
 }
 
 .slide-company,
 .slide-price {
-    font-size: 0.8rem;
+    font-size: calc(var(--desktop-font-size) * 0.6);
 }
 
 .cart-button {
@@ -297,7 +298,7 @@ nav {
     color: #262626;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: 3rem;
+    font-size: calc(var(--desktop-font-size) * 1.5);
     font-weight: 300;
     overflow: hidden;
 }
@@ -366,7 +367,7 @@ nav {
 .category-title {
     color: #4F4F4F;
     font-family: 'Montserrat';
-    font-size: 2rem;
+    font-size: calc(var(--desktop-font-size) * 1.5);
     font-style: normal;
     font-weight: 300;
     line-height: normal;
@@ -377,7 +378,7 @@ nav {
     color: #262626;
     text-align: left;
     font-family: 'Montserrat';
-    font-size: 1rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -412,7 +413,7 @@ nav {
     justify-content: space-between;
     text-decoration: none;
     font-family: "Montserrat";
-    font-size: 1rem;
+    font-size: calc(var(--desktop-font-size) * 0.8);
     color: #262626;
 }
 
@@ -546,5 +547,110 @@ nav {
 @media (max-width: 1024px) {
     :root {
         --desktop-font-size: 4vw;
+    }
+
+    main{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .videoPlayer{
+        height: 100dvh;
+    }
+
+    .videoTextHeader{
+        gap: 1rem;
+        padding: 3vh 0;
+    }
+
+    .h1-heading {
+        font-size: calc(var(--desktop-font-size) * 2);
+        color: #fff;
+        text-align: center;
+        font-family: "Montserrat";
+        font-weight: 500;
+        overflow: hidden;
+    }
+
+    .video-sub{
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .liness{
+        display: none;
+    }
+
+    .tag-line {
+        align-items: flex-start;
+        padding: 0 5vw;
+    }
+
+    .tag-line .h2-heading {
+        font-size: calc(var(--desktop-font-size) * 3);
+    }
+
+    .tag-line .h2-Text .h2-heading:nth-child(1) {
+        margin-left: 0vw;
+    }
+    
+    .tag-line .h2-Text .h2-heading:nth-child(2) {
+        margin-left: 0vw;
+    }
+    
+    .tag-line .h2-Text .h2-heading:nth-child(3) {
+        margin-left: 0vw;
+    }
+
+    .tag-line .h4-heading {
+        width: 100%;
+        text-align: left !important;
+    }
+
+    
+    .tag-line .h2-heading {
+        text-align: left;
+    }
+
+    .today-deal{
+        height: fit-content;
+    }
+
+    .slider{
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0 4vw;
+        height: fit-content;
+    }
+    .slide {
+        width: 80%;
+        height: fit-content;
+    }
+
+    .explore-lots .slider{
+        align-items: center;
+        justify-content: center;
+    }
+    .explore-lots .slider .slide{
+        width: 90%;
+        height: fit-content;
+    }
+
+    .slide-name {
+        font-size: calc(var(--desktop-font-size) * 1);
+    }
+    
+    .slide-company,
+    .slide-price {
+        font-size: calc(var(--desktop-font-size) * 0.8);
+    }
+
+    .slide{
+        gap: 0.5rem;
+    }
+
+    .slide-text {
+        gap: 0.7rem;
     }
 }
