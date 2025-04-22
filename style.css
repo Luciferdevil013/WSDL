@@ -550,6 +550,7 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: #262626;
+    margin-top: 5vh;
 }
 
 .footer-upper {
