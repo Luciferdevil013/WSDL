@@ -174,7 +174,7 @@ nav {
     color: #262626;
     text-align: center;
     font-family: 'Montserrat';
-    font-size: calc(var(--desktop-font-size) * 5);
+    font-size: calc(var(--desktop-font-size) * 4);
     font-weight: 300;
     overflow: hidden;
 }
