@@ -51,15 +51,15 @@ tagAnimation.from(splitText('.tag-line .h4-heading'), {
 }, 'tag')
 
 tagAnimation.from(splitText('.tag-line .unbeat'), {
-    y: 100,
+    y: 120,
     duration: 0.7,
 }, 'tag')
 tagAnimation.from(splitText('.tag-line .quality'), {
-    y: 100,
+    y: 120,
     duration: 0.7,
 }, 'tag')
 tagAnimation.from(splitText('.tag-line .invent'), {
-    y: 100,
+    y: 120,
     duration: 0.7,
 }, 'tag')
 

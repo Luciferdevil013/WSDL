@@ -173,7 +173,6 @@ nav {
     font-family: 'Montserrat';
     font-size: 7rem;
     font-weight: 300;
-    line-height: 100%;
     overflow: hidden;
 }
 
@@ -542,4 +541,10 @@ nav {
     font-size: 1.6rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    :root {
+        --desktop-font-size: 4vw;
+    }
 }

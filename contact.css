@@ -218,6 +218,7 @@ form .submit{
 .questionTitle{
     font-weight: 400;
     font-size: calc(var(--desktop-font-size) * 1.2);
+    text-align: left;
 }
 .answer{
     padding: 1rem;
