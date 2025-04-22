@@ -130,7 +130,7 @@ async function fetchTodaysDeals() {
     try {
         const query = `
             query {
-                products(first: 4) {
+                products(first: 50) {
                     edges {
                         node {
                             id
@@ -365,6 +365,16 @@ async function initializePage() {
     const exploreLots = await fetchExploreLots();
     displayExploreLots(exploreLots);
     fetchStocks();
+
+    new Glider(document.querySelector('.today-deal-slider'), {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        arrows: {
+          prev: '.left-arrow',
+          next: '.right-arrow'
+        }
+      });
+      
 }
 
 // Call initializePage when the DOM is loaded

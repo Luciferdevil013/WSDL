@@ -220,6 +220,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    position: relative;
 }
 
 
@@ -229,13 +230,34 @@ nav {
     height: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 2rem;
     overflow: hidden;
 }
 
 .today-deal .slider {
+    width: 80% !important;
     padding: 3vh 0;
+    position: relative;
+    gap: 2rem !important;
+}
+
+.today-deal .left-arrow,
+.today-deal .right-arrow {
+    position: absolute;
+    top: 50%;
+    background:none;
+    cursor: pointer;
+    z-index: 99999;
+    border: none;
+}
+
+.today-deal .right-arrow{
+    right: 2%;
+}
+
+.today-deal .left-arrow{
+    left: 2%;
 }
 
 .product-link {
@@ -260,8 +282,20 @@ nav {
     padding: 1vw;
 }
 
-.explore-lots .slide{
-    width: 22%;
+.glider-track .slide {
+    width: 14% !important;
+}
+
+.glider-track{
+    gap: 2rem !important;
+}
+
+.explore-lots .slider{
+    width: 100% !important;
+}
+
+.explore-lots .slider .slide{
+    width: 22% !important;
 }
 
 .slide .slide-img {
@@ -349,7 +383,7 @@ nav {
     padding: 5vh 5vw;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
 }
 
 .categories-show {

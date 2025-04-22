@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
     <link rel="stylesheet" href="/CSS/style.css">
     <title>We Sell Dead Lots</title>
 </head>
@@ -78,8 +80,19 @@
         <section class="today-deal today">
             <h3 class="h3-heading">Today's Deal</h3>
 
-            <div class="slider">
+            <div class="slider today-deal-slider">
             </div>
+            <button type="button" class="left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="77" height="40" viewBox="0 0 77 40" fill="none">
+                    <path d="M65.8945 20L6.66376 20" stroke="#333333" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M17.6719 8.75L6.31122 20L17.6719 31.25" stroke="#333333" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                  </svg>
+            </button>
+
+            <button type="button" class="right-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="77" height="40" viewBox="0 0 77 40" fill="none">
+                <path d="M11.1055 20L70.3362 20" stroke="#333333" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+                <path d="M59.3281 8.75L70.6888 20L59.3281 31.25" stroke="#333333" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+              </svg></button>
         </section>
 
         <section class="categories">
@@ -156,6 +169,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
     <script src="/JS/index.js"></script>
 </body>
