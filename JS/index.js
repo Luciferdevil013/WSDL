@@ -314,6 +314,7 @@ function displayExploreLots(products) {
 const interestContainer = document.querySelector('.category-show')
 
 const allButton = document.querySelectorAll('.categories-button')
+const categoryTitle = document.querySelector('.category-title')
 
 let allStocks = {}
 
@@ -327,6 +328,7 @@ allButton.forEach(button => {
     button.addEventListener('click', (buttonInstance) => {
         allButton.forEach(btn => btn.classList.remove('active'));
         buttonInstance.target.classList.add('active')
+        categoryTitle.innerHTML = buttonInstance.target.innerHTML
         getStockData(buttonInstance.target.dataset.stock)
 
     })

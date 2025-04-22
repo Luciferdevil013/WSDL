@@ -113,8 +113,8 @@
 }
 
 .category-product .slide{
-    width: 25%;
-    height: 45vh;
+    width: 28%;
+    height: fit-content;
     flex-shrink: 0;
     border: none;
     display: flex;
