@@ -49,6 +49,14 @@ async function fetchCollections() {
                                                     }
                                                 }
                                             }
+                                            metafields(identifiers: [
+                                                {namespace: "custom", key: "model_no"}
+                                            ]) {
+                                                id
+                                                namespace
+                                                key
+                                                value
+                                            }
                                             variants(first: 1) {
                                                 edges {
                                                     node {
@@ -282,6 +290,9 @@ function handleCategoryFilter(collections) {
                                             metafields(identifiers: [
                                                 {namespace: "custom", key: "Model_No"}
                                             ]) {
+                                                id
+                                                namespace
+                                                key
                                                 value
                                             }
                                             images(first: 1) {
@@ -325,6 +336,7 @@ function handleCategoryFilter(collections) {
                 })
                 .then(data => {
 
+
                     if (data.errors) {
                         if (categoryDiv) {
                             categoryDiv.innerHTML = '<p>Error: ' + data.errors[0].message + '</p>';
@@ -338,9 +350,7 @@ function handleCategoryFilter(collections) {
                         }
                         return;
                     }
-                    console.log(data);
                     const products = data.data.collections.edges[0].node.products.edges;
-                    console.log(products);
                     displayProducts(products);
                 })
                 .catch(error => {
@@ -395,20 +405,17 @@ function displayProducts(products) {
     try {
         products.forEach(product => {
             const productNode = product.node;
-            // console.log('Product Node:', productNode);
-            
+
             // Get product image URL
             const imageUrl = productNode.images?.edges?.[0]?.node?.url || '';
             const imageAlt = productNode.images?.edges?.[0]?.node?.altText || productNode.title;
-            
+
             // Get product price
             const price = productNode.variants?.edges?.[0]?.node?.price?.amount || '0';
-            
+
             // Get Model No from metafields
-            const modelNo = productNode.metafields?.find(
-                meta => meta && meta.namespace === 'custom' && meta.key === 'Model_No'
-            )?.value || 'N/A';
-            
+            const modelNo = productNode.metafields?.[0]?.value || 'N/A';
+
             const productHTML = `
                 <div class="slide">
                     <a href="./product.html?id=${productNode.id.split('/').pop()}" class="product-link">
@@ -426,10 +433,9 @@ function displayProducts(products) {
                     <button class="cart-button">Chat With Us</button>
                 </div>
             `;
-            
+
             categoryDiv.insertAdjacentHTML('beforeend', productHTML);
         });
-
     } catch (error) {
         categoryDiv.innerHTML = '<p>Error displaying products. Please try again.</p>';
     }

@@ -156,6 +156,14 @@ async function fetchTodaysDeals() {
                                         }
                                     }
                                 }
+                                metafields(identifiers: [
+                                    {namespace: "custom", key: "model_no"}
+                                ]) {
+                                    id
+                                    namespace
+                                    key
+                                    value
+                                }
                             }
                         }
                     }
@@ -197,6 +205,7 @@ async function fetchExploreLots() {
                             title
                             vendor
                             description
+                            productType
                             images(first: 1) {
                                 edges {
                                     node {
@@ -214,6 +223,14 @@ async function fetchExploreLots() {
                                         }
                                     }
                                 }
+                            }
+                            metafields(identifiers: [
+                                {namespace: "custom", key: "model_no"}
+                            ]) {
+                                id
+                                namespace
+                                key
+                                value
                             }
                         }
                     }
@@ -257,6 +274,9 @@ function displayTodaysDeals(products) {
 
     products.forEach(product => {
         const productNode = product.node;
+        const modelNo = productNode.metafields && productNode.metafields.length > 0 
+                ? productNode.metafields[0]?.value || 'N/A'
+                : 'N/A';
         const productHTML = `
             <div class="slide">
                 <a href="./product.html?id=${productNode.id.split('/').pop()}" class="product-link">
@@ -265,8 +285,10 @@ function displayTodaysDeals(products) {
                     <div class="slide-details">
                         <div class="slide-text">
                             <h4 class="h4-heading slide-name">${productNode.title}</h4>
+                            <h4 class="h4-heading slide-company">Model No: ${modelNo}</h4>
                             <h4 class="h4-heading slide-company">${productNode.vendor}</h4>
                             <h4 class="h4-heading slide-price">Dhs. ${productNode.variants.edges[0]?.node?.price?.amount || '0'} AED</h4>
+                            <h4 class="h4-heading slide-company">Product Type: ${productNode.productType || ''}</h4>
                         </div>
                     </div>
                 </a>
@@ -291,6 +313,9 @@ function displayExploreLots(products) {
 
     products.forEach(product => {
         const productNode = product.node;
+        const modelNo = productNode.metafields && productNode.metafields.length > 0 
+                ? productNode.metafields[0]?.value || 'N/A'
+                : 'N/A';
         const productHTML = `
             <div class="slide">
                 <a href="./product.html?id=${productNode.id.split('/').pop()}" class="product-link">
@@ -299,8 +324,10 @@ function displayExploreLots(products) {
                     <div class="slide-details">
                         <div class="slide-text">
                             <h4 class="h4-heading slide-name">${productNode.title}</h4>
+                            <h4 class="h4-heading slide-company">Model No: ${modelNo} </h4>
                             <h4 class="h4-heading slide-company">${productNode.vendor}</h4>
                             <h4 class="h4-heading slide-price">Dhs. ${productNode.variants.edges[0]?.node?.price?.amount || '0'} AED</h4>
+                            <h4 class="h4-heading slide-company">Product Type: ${productNode.productType || ''}</h4>
                         </div>
                     </div>
                 </a>
