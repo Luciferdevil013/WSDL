@@ -77,7 +77,7 @@ async function fetchCollections() {
                     'X-Shopify-Storefront-Access-Token': shopifyConfig.accessToken,
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({ 
+                body: JSON.stringify({
                     query,
                     variables
                 })
@@ -88,7 +88,7 @@ async function fetchCollections() {
             }
 
             const data = await response.json();
-            
+
             if (data.errors) {
                 throw new Error('GraphQL query failed');
             }
@@ -98,13 +98,13 @@ async function fetchCollections() {
             }
 
             const collections = data.data.collections;
-            
+
             // Fetch subcollection titles
             for (const collection of collections.edges) {
                 const subCategoryMetafield = collection.node.metafields?.find(
                     meta => meta && meta.namespace === 'custom' && meta.key === 'sub_category'
                 );
-                
+
                 if (subCategoryMetafield?.value) {
                     try {
                         const subCollectionIds = JSON.parse(subCategoryMetafield.value);
@@ -117,7 +117,7 @@ async function fetchCollections() {
                                         }
                                     }
                                 `;
-                                
+
                                 const subResponse = await fetch(`https://${shopifyConfig.storeUrl}/api/${shopifyConfig.apiVersion}/graphql.json`, {
                                     method: 'POST',
                                     headers: {
@@ -127,12 +127,12 @@ async function fetchCollections() {
                                     },
                                     body: JSON.stringify({ query: subQuery })
                                 });
-                                
+
                                 const subData = await subResponse.json();
                                 return subData.data?.collection?.title || '';
                             })
                         );
-                        
+
                         // Replace the metafield value with the titles
                         subCategoryMetafield.value = JSON.stringify(subCollectionTitles);
                     } catch (error) {
@@ -140,7 +140,7 @@ async function fetchCollections() {
                     }
                 }
             }
-            
+
             allCollections = [...allCollections, ...collections.edges];
             hasNextPage = collections.pageInfo?.hasNextPage || false;
             cursor = collections.pageInfo?.endCursor || null;
@@ -158,7 +158,7 @@ async function fetchCollections() {
 // Function to update category list with collections and subcategories
 function updateCategoryList(collections) {
     const categoryList = document.querySelector('.category-list');
-    
+
     if (!categoryList) {
         console.error('Category list not found');
         return;
@@ -172,23 +172,23 @@ function updateCategoryList(collections) {
             </button>
         </div>
         ${collections.map(collection => {
-            const collectionNode = collection.node;
-            
-            // Get subcategories from metafield
-            const subCategoryMetafield = collectionNode.metafields?.find(
-                meta => meta && meta.namespace === 'custom' && meta.key === 'sub_category'
-            );
-            
-            if (subCategoryMetafield?.value) {
-                let subcategoriesArray = [];
-                try {
-                    subcategoriesArray = JSON.parse(subCategoryMetafield.value);
-                } catch (error) {
-                    console.error('Error parsing subcategories:', error);
-                    subcategoriesArray = [];
-                }
+        const collectionNode = collection.node;
 
-                return `
+        // Get subcategories from metafield
+        const subCategoryMetafield = collectionNode.metafields?.find(
+            meta => meta && meta.namespace === 'custom' && meta.key === 'sub_category'
+        );
+
+        if (subCategoryMetafield?.value) {
+            let subcategoriesArray = [];
+            try {
+                subcategoriesArray = JSON.parse(subCategoryMetafield.value);
+            } catch (error) {
+                console.error('Error parsing subcategories:', error);
+                subcategoriesArray = [];
+            }
+
+            return `
                     <div class="category-item">
                         <button class="category-button" data-collection="${collectionNode.handle}">
                             ${collectionNode.title}
@@ -205,11 +205,11 @@ function updateCategoryList(collections) {
                         </div>
                     </div>
                 `;
-            }
-            return ''; // Skip collections without subcategories
-        }).join('')}
+        }
+        return ''; // Skip collections without subcategories
+    }).join('')}
     `;
-    
+
     categoryList.innerHTML = categoryButtons;
 }
 
@@ -217,27 +217,31 @@ function updateCategoryList(collections) {
 function handleCategoryFilter(collections) {
     const categoryButtons = document.querySelectorAll('.category-button');
     const subcategoryButtons = document.querySelectorAll('.subcategory-button');
-    
-    
+
+
     // Handle category button clicks
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             const categoryItem = button.parentElement;
-            
+
             // Toggle active state for category item
             if (button.dataset.collection !== 'all') {
                 categoryItem.classList.toggle('active');
             }
-            
+
             // Remove active class from all category buttons
             categoryButtons.forEach(btn => btn.classList.remove('active'));
-            
+
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             // Reset all subcategory buttons
             subcategoryButtons.forEach(btn => btn.classList.remove('active'));
-            
+
+            // If "All Products" is clicked, show all products
+            if (button.dataset.collection === 'all') {
+                displayAllProducts(collections);
+            }
         });
     });
 
@@ -249,18 +253,18 @@ function handleCategoryFilter(collections) {
             categoryItem.querySelectorAll('.subcategory-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             const collectionHandle = button.dataset.collection;
-            const subcategory = button.dataset.subcategory;    
+            const subcategory = button.dataset.subcategory;
             // Show loading state
             const categoryDiv = document.querySelector('.category-product');
             if (categoryDiv) {
                 categoryDiv.innerHTML = '<p>Loading products...</p>';
             }
-            
+
             // Fetch products for this subcategory
             const query = `
                 query {
@@ -275,6 +279,11 @@ function handleCategoryFilter(collections) {
                                             vendor
                                             productType
                                             description
+                                            metafields(identifiers: [
+                                                {namespace: "custom", key: "Model_No"}
+                                            ]) {
+                                                value
+                                            }
                                             images(first: 1) {
                                                 edges {
                                                     node {
@@ -301,7 +310,7 @@ function handleCategoryFilter(collections) {
                     }
                 }
             `;
-            
+
             fetch(`https://${shopifyConfig.storeUrl}/api/${shopifyConfig.apiVersion}/graphql.json`, {
                 method: 'POST',
                 headers: {
@@ -311,34 +320,35 @@ function handleCategoryFilter(collections) {
                 },
                 body: JSON.stringify({ query })
             })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                
-                if (data.errors) {
-                    if (categoryDiv) {
-                        categoryDiv.innerHTML = '<p>Error: ' + data.errors[0].message + '</p>';
-                    }
-                    return;
-                }
-                
-                if (!data.data?.collections?.edges?.[0]?.node?.products?.edges) {
-                    if (categoryDiv) {
-                        categoryDiv.innerHTML = '<p>No products found for this category</p>';
-                    }
-                    return;
-                }
-                
-                const products = data.data.collections.edges[0].node.products.edges;
-                displayProducts(products);
-            })
-            .catch(error => {
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
 
-                if (categoryDiv) {
-                    categoryDiv.innerHTML = '<p>Error loading products. Please try again.</p>';
-                }
-            });
+                    if (data.errors) {
+                        if (categoryDiv) {
+                            categoryDiv.innerHTML = '<p>Error: ' + data.errors[0].message + '</p>';
+                        }
+                        return;
+                    }
+
+                    if (!data.data?.collections?.edges?.[0]?.node?.products?.edges) {
+                        if (categoryDiv) {
+                            categoryDiv.innerHTML = '<p>No products found for this category</p>';
+                        }
+                        return;
+                    }
+                    console.log(data);
+                    const products = data.data.collections.edges[0].node.products.edges;
+                    console.log(products);
+                    displayProducts(products);
+                })
+                .catch(error => {
+
+                    if (categoryDiv) {
+                        categoryDiv.innerHTML = '<p>Error loading products. Please try again.</p>';
+                    }
+                });
         });
     });
 }
@@ -351,9 +361,20 @@ function displayAllProducts(collections) {
     // Clear existing content
     categoryDiv.innerHTML = '';
 
-    // Combine all products from all collections
-    const allProducts = collections.flatMap(collection => collection.node.products.edges);
-    displayProducts(allProducts);
+    // Get all products from all collections
+    const allProducts = [];
+    collections.forEach(collection => {
+        if (collection.node.products && collection.node.products.edges) {
+            allProducts.push(...collection.node.products.edges);
+        }
+    });
+
+    // Remove duplicate products based on ID
+    const uniqueProducts = allProducts.filter((product, index, self) =>
+        index === self.findIndex((p) => p.node.id === product.node.id)
+    );
+
+    displayProducts(uniqueProducts);
 }
 
 // Function to display products
@@ -374,6 +395,7 @@ function displayProducts(products) {
     try {
         products.forEach(product => {
             const productNode = product.node;
+            // console.log('Product Node:', productNode);
             
             // Get product image URL
             const imageUrl = productNode.images?.edges?.[0]?.node?.url || '';
@@ -382,6 +404,11 @@ function displayProducts(products) {
             // Get product price
             const price = productNode.variants?.edges?.[0]?.node?.price?.amount || '0';
             
+            // Get Model No from metafields
+            const modelNo = productNode.metafields?.find(
+                meta => meta && meta.namespace === 'custom' && meta.key === 'Model_No'
+            )?.value || 'N/A';
+            
             const productHTML = `
                 <div class="slide">
                     <a href="./product.html?id=${productNode.id.split('/').pop()}" class="product-link">
@@ -389,8 +416,10 @@ function displayProducts(products) {
                         <div class="slide-details">
                             <div class="slide-text">
                                 <h4 class="h4-heading slide-name">${productNode.title}</h4>
-                                <h4 class="h4-heading slide-company">${productNode.vendor || ''}</h4>
+                                <h4 class="h4-heading slide-company">Model No: ${modelNo}</h4>
                                 <h4 class="h4-heading slide-price">Dhs. ${price} AED</h4>
+                                <h4 class="h4-heading slide-company">${productNode.vendor || ''}</h4>
+                                <h4 class="h4-heading slide-company">Product Type: ${productNode.productType || ''}</h4>
                             </div>
                         </div>
                     </a>
@@ -409,14 +438,14 @@ function displayProducts(products) {
 // Main function to initialize the category page
 async function initializeCategoryPage() {
     const collections = await fetchCollections();
-    
+
     if (collections.length > 0) {
         // Update category list with collections and subcategories
         updateCategoryList(collections);
-        
+
         // Set up category and subcategory filtering
         handleCategoryFilter(collections);
-        
+
         // Display all products initially
         displayAllProducts(collections);
     } else {
