@@ -759,16 +759,6 @@ footer {
 
     .explore-button a {
         padding: 20vh 20vw;
-        /* width: 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        text-decoration: none;
-        color: #262626;
-        font-family: "Montserrat";
-        font-size: calc(var(--desktop-font-size) * 1.1);
-        position: relative; */
     }
 
     .today-deal {
@@ -801,10 +791,12 @@ footer {
     .explore-lots .slider {
         align-items: center;
         justify-content: center;
+        padding: 1vh 0.5vw !important;
+        gap: 0.5rem !important;
     }
 
     .explore-lots .slider .slide {
-        width: 90% !important;
+        width: 45% !important;
         height: fit-content;
         padding: 2vh 2vw;
     }
