@@ -88,15 +88,12 @@ async function fetchCollections() {
             }
 
             const data = await response.json();
-            console.log(data)
             
             if (data.errors) {
-                console.error('GraphQL Errors:', data.errors);
                 throw new Error('GraphQL query failed');
             }
 
             if (!data.data || !data.data.collections) {
-                console.error('Unexpected response structure:', data);
                 throw new Error('Invalid response structure');
             }
 
@@ -138,7 +135,6 @@ async function fetchCollections() {
                         
                         // Replace the metafield value with the titles
                         subCategoryMetafield.value = JSON.stringify(subCollectionTitles);
-                        console.log(subCategoryMetafield);
                     } catch (error) {
                         console.error('Error fetching subcollection titles:', error);
                     }
@@ -168,8 +164,6 @@ function updateCategoryList(collections) {
         return;
     }
 
-    console.log('All collections:', collections);
-
     // Create category buttons
     const categoryButtons = `
         <div class="category-item">
@@ -179,19 +173,16 @@ function updateCategoryList(collections) {
         </div>
         ${collections.map(collection => {
             const collectionNode = collection.node;
-            console.log('Processing collection:', collectionNode);
             
             // Get subcategories from metafield
             const subCategoryMetafield = collectionNode.metafields?.find(
                 meta => meta && meta.namespace === 'custom' && meta.key === 'sub_category'
             );
-            console.log('Subcategory metafield:', subCategoryMetafield);
             
             if (subCategoryMetafield?.value) {
                 let subcategoriesArray = [];
                 try {
                     subcategoriesArray = JSON.parse(subCategoryMetafield.value);
-                    console.log('Parsed subcategories:', subcategoriesArray);
                 } catch (error) {
                     console.error('Error parsing subcategories:', error);
                     subcategoriesArray = [];
@@ -227,14 +218,10 @@ function handleCategoryFilter(collections) {
     const categoryButtons = document.querySelectorAll('.category-button');
     const subcategoryButtons = document.querySelectorAll('.subcategory-button');
     
-    console.log('Collections:', collections);
-    console.log('Category Buttons:', categoryButtons);
-    console.log('Subcategory Buttons:', subcategoryButtons);
     
     // Handle category button clicks
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
-            console.log('Category button clicked:', button.dataset.collection);
             const categoryItem = button.parentElement;
             
             // Toggle active state for category item
@@ -257,7 +244,6 @@ function handleCategoryFilter(collections) {
     // Handle subcategory button clicks
     subcategoryButtons.forEach(button => {
         button.addEventListener('click', () => {
-            console.log('Subcategory button clicked:', button.dataset.subcategory);
             // Remove active class from all subcategory buttons in the same category
             const categoryItem = button.closest('.category-item');
             categoryItem.querySelectorAll('.subcategory-button').forEach(btn => {
@@ -268,9 +254,7 @@ function handleCategoryFilter(collections) {
             button.classList.add('active');
             
             const collectionHandle = button.dataset.collection;
-            const subcategory = button.dataset.subcategory;
-            console.log('Filtering by:', { collectionHandle, subcategory });
-            
+            const subcategory = button.dataset.subcategory;    
             // Show loading state
             const categoryDiv = document.querySelector('.category-product');
             if (categoryDiv) {
@@ -318,8 +302,6 @@ function handleCategoryFilter(collections) {
                 }
             `;
             
-            console.log('Sending query:', query);
-            
             fetch(`https://${shopifyConfig.storeUrl}/api/${shopifyConfig.apiVersion}/graphql.json`, {
                 method: 'POST',
                 headers: {
@@ -330,14 +312,11 @@ function handleCategoryFilter(collections) {
                 body: JSON.stringify({ query })
             })
             .then(response => {
-                console.log('Response status:', response.status);
                 return response.json();
             })
             .then(data => {
-                console.log('Full response:', data);
                 
                 if (data.errors) {
-                    console.error('GraphQL Errors:', data.errors);
                     if (categoryDiv) {
                         categoryDiv.innerHTML = '<p>Error: ' + data.errors[0].message + '</p>';
                     }
@@ -345,7 +324,6 @@ function handleCategoryFilter(collections) {
                 }
                 
                 if (!data.data?.collections?.edges?.[0]?.node?.products?.edges) {
-                    console.error('No products found in response:', data);
                     if (categoryDiv) {
                         categoryDiv.innerHTML = '<p>No products found for this category</p>';
                     }
@@ -353,11 +331,10 @@ function handleCategoryFilter(collections) {
                 }
                 
                 const products = data.data.collections.edges[0].node.products.edges;
-                console.log('Found products:', products);
                 displayProducts(products);
             })
             .catch(error => {
-                console.error('Error fetching products:', error);
+
                 if (categoryDiv) {
                     categoryDiv.innerHTML = '<p>Error loading products. Please try again.</p>';
                 }
@@ -381,10 +358,8 @@ function displayAllProducts(collections) {
 
 // Function to display products
 function displayProducts(products) {
-    console.log('Displaying products:', products);
     const categoryDiv = document.querySelector('.category-product');
     if (!categoryDiv) {
-        console.error('Category product div not found');
         return;
     }
 
@@ -399,7 +374,6 @@ function displayProducts(products) {
     try {
         products.forEach(product => {
             const productNode = product.node;
-            console.log('Processing product:', productNode);
             
             // Get product image URL
             const imageUrl = productNode.images?.edges?.[0]?.node?.url || '';
@@ -424,12 +398,10 @@ function displayProducts(products) {
                 </div>
             `;
             
-            console.log('Adding product HTML:', productHTML);
             categoryDiv.insertAdjacentHTML('beforeend', productHTML);
         });
 
     } catch (error) {
-        console.error('Error displaying products:', error);
         categoryDiv.innerHTML = '<p>Error displaying products. Please try again.</p>';
     }
 }
