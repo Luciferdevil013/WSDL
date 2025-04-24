@@ -131,6 +131,7 @@
 
 .slide-details {
     flex: 1;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -141,7 +142,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: 100%;
+    height: fit-content;
     width: 100%;
 }
 
@@ -161,7 +162,7 @@
     .category-product{
         width: 100%;
         height: fit-content;
-        padding: 0 2vw;
+        padding: 2vh 2vw;
         gap: 1rem;
         align-items: center;
         justify-content: center;
@@ -173,6 +174,7 @@
 
     .category-product .slide{
         width: 80%;
-        height: 50vh;
+        height: fit-content;
+        padding: 2vh 2vw;
     }
 }
