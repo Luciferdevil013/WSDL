@@ -137,7 +137,7 @@ async function fetchTodaysDeals() {
                                 id
                                 title
                                 vendor
-                                description
+                                productType
                                 images(first: 1) {
                                     edges {
                                         node {
