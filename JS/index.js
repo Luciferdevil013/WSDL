@@ -67,7 +67,7 @@ tagAnimation.from(splitText('.tag-line .invent'), {
 const todayDealAnimation = gsap.timeline({
     scrollTrigger: {
         trigger: '.today-deal',
-        start: 'top 50%',
+        start: 'top 40%',
         end: 'top bottom',
     }
 });
@@ -86,7 +86,7 @@ todayDealAnimation.from('.today .slider', {
 const categoryAnimation = gsap.timeline({
     scrollTrigger: {
         trigger: '.categories',
-        start: 'top 50%',
+        start: 'top 40%',
         end: 'top bottom',
     }
 });
@@ -104,7 +104,7 @@ categoryAnimation.from('.categories .categories-show', {
 const exploreAnimation = gsap.timeline({
     scrollTrigger: {
         trigger: '.explore-lots',
-        start: 'top 50%',
+        start: 'top 40%',
         end: 'top bottom',
     }
 });
