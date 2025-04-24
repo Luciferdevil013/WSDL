@@ -251,16 +251,6 @@ function handleCategoryFilter(collections) {
             // Reset all subcategory buttons
             subcategoryButtons.forEach(btn => btn.classList.remove('active'));
             
-            const collectionHandle = button.dataset.collection;
-            if (collectionHandle === 'all') {
-                displayAllProducts(collections);
-            } else {
-                // Clear products when clicking main category
-                const categoryDiv = document.querySelector('.category-product');
-                if (categoryDiv) {
-                    categoryDiv.innerHTML = '';
-                }
-            }
         });
     });
 
