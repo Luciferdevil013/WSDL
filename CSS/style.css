@@ -246,17 +246,18 @@ nav {
 .today-deal .right-arrow {
     position: absolute;
     top: 50%;
-    background:none;
+    background: none;
     cursor: pointer;
     z-index: 99999;
     border: none;
+    width: 5vw;
 }
 
-.today-deal .right-arrow{
+.today-deal .right-arrow {
     right: 2%;
 }
 
-.today-deal .left-arrow{
+.today-deal .left-arrow {
     left: 2%;
 }
 
@@ -286,16 +287,21 @@ nav {
     width: 14% !important;
 }
 
-.glider-track{
+.glider-track {
     gap: 2rem !important;
     padding: 0 1vw !important;
 }
 
-.explore-lots .slider{
+/* Smooth transition for the slider track */
+.glider-track {
+    transition: transform 0.7s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+.explore-lots .slider {
     width: 100% !important;
 }
 
-.explore-lots .slider .slide{
+.explore-lots .slider .slide {
     width: 22% !important;
 }
 
@@ -742,10 +748,15 @@ footer {
         height: fit-content;
     }
 
+    .today-deal .left-arrow,
+    .today-deal .right-arrow {
+        width: 15vw;
+    }
+
     .slider {
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 0 4vw;
+        padding: 2vh 8vw !important;
         height: fit-content;
     }
 
@@ -755,7 +766,7 @@ footer {
     }
 
     .glider-track .slide {
-        width: 30% !important;
+        width: 14% !important;
         padding: 2vh 2vw;
         height: fit-content;
     }
@@ -788,11 +799,11 @@ footer {
         gap: 0.5rem;
     }
 
-    .categories-show{
+    .categories-show {
         flex-direction: column;
     }
 
-    .categories-list{
+    .categories-list {
         width: 100%;
         display: flex;
         flex-direction: row;

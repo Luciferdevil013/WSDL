@@ -369,14 +369,23 @@ async function initializePage() {
     fetchStocks();
 
     new Glider(document.querySelector('.today-deal-slider'), {
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        scrollLock: true,
         arrows: {
-          prev: '.left-arrow',
-          next: '.right-arrow'
-        }
-      });
-      
+            prev: '.left-arrow',
+            next: '.right-arrow'
+        },
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2
+                }
+            }
+        ]
+    });
 }
 
 // Call initializePage when the DOM is loaded
