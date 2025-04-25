@@ -213,8 +213,15 @@ nav {
     text-decoration: none;
     color: #262626;
     font-family: "Montserrat";
-    font-size: calc(var(--desktop-font-size) * 1.1);
+    font-size: calc(var(--desktop-font-size) * 0.8);
     position: relative;
+    font-weight: 500;
+    flex-direction: column;
+}
+
+.link-text{
+    font-size: calc(var(--desktop-font-size) * 1);
+    font-weight: 400;
 }
 
 .outer{
@@ -425,6 +432,7 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    flex-shrink: 0;
 }
 
 .category-show {
@@ -833,6 +841,11 @@ footer {
 
     .category {
         width: 90%;
+    }
+
+    .category-show {
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 
     footer {
